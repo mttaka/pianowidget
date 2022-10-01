@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<article>
+  <h1>Live Keyboard</h1>
+
+  <p>
+    The LiveKeyboard class implements a stylable canvas-based widget representing a piano keyboard.
+  </p>
+
+  <div class='example result'>
+    <div class='liveKeyboard' id='kbdTitle' style='width: 530px'></div>
+  </div>
+
+
+  <div id='basicUsage'>
+  <h2> Basic Usage; Default Appearance and Behavior </h2>
+    <div>
+      <p>
+      By default, the class creates a two-octave monophonic keyboard that takes the full width of its container, and adjusts its height accordingly
+      </p>
+    </div>
+    <div>
+      <p>
+      In the HTML, define a container that will hold the keyboard widget, and specify the width of the element. In the JavaScript, create a new instance of the LiveKeyboard class, passing the desired HTML container as a parameter
+      </p>
+    </div>
+  </p>
+
+
+  <h3>Example</h3>
+  <h4>HTML</h4>
+  <div class='example code'>
+    <pre><code><span>&lt;div id='kbd1' style='width: 200px'>&lt;/div></span></pre></code>
+  </div>
+
+
+  <h4>JavaScript</h4>
+    <div class='example'>
+    <pre><code>
+<span>var kbd1container = document.getElementById('kbd1');</span>
+<span>var kbd1 = new LiveKeyboard(kbd1container);</span>
+    </pre></code>
+    </div>
+
+    <h4>Result</h4>
+    <div class='example result'>
+      <div id='kbd1' style='width: 200px'></div>
+    </div>
+
+  </div> <!-- close basicUsage -->
+
+  <div id='styling'>
+    <h2>Styling and Behavior</h2>
+    <p>
+      Styling and behavior options can be applied as the second argument given to the constructor when creating a new keyboard object, or with the setOptions( ) method.
+    </p>
+
+    <h3>Example</h3>
+    <p>The following example demonstrates some available styling and behavior options</p>
+
+    <h4>HTML</h4>
+      <div class='example html'>
+      <pre><code>
+<span>&lt;div id='kbd2' style='width: 500px'>&lt;/div></span>
+      </code></pre>
+    </div> <!-- close example html -->
+
+    <h4>JavaScript</h4>
+      <div class='example javascript'>
+      <pre><code>
+<span>var kbd2container = document.getElementById('kbd2');</span>
+<span>var kbd2 = new LiveKeyboard(kbd2container, {</span>
+<span>  bottomNote: 21,</span>
+<span>  topNote: 95,</span>
+<span>  whiteKeyColor: 'black',</span>
+<span>  blackKeyColor: 'red',</span>
+<span>  keyBorderColor: 'yellow',</span>
+<span>  whiteKeyActiveColor: '#ff9988',</span>
+<span>  blackKeyActiveColor: '#887711',</span>
+<span>  mode: 'polyphonic',</span>
+<span>  editable: true</span>
+<span>});</span>
+      </code></pre>
+    </div> <!-- close example javascript -->
+
+    <h4>Result</h4>
+      <div class='example result'>
+        <div id='kbd2' style='width: 500px'></div>
+    </div> <!-- close example result -->
+        <h4>List of Available Options</h4>
+    <ul>
+      <li>bottomNote {number} </li>
+      <li>topNote {number}</li>
+      <li>whiteKeyColor {string}</li>
+      <li>blackKeyColor {string}</li>
+      <li>keyBorderColor {string}</li>
+      <li>whiteKeyActiveColor {string}</li>
+      <li>blackKeyActiveColor {string}</li>
+      <li>mode {string}</li>
+      <li>editable {boolean}</li>
+    </ul>
+  </div> <!-- close styling and behavior -->
+
+  <div id='methods'>
+  <h2>Methods</h2>
+  <ul>
+    <li><span>setBottomNote(midiPitch)</span>
+      <div>parameter midiPitch - the MIDI pitch number for the desired bottom note</div>
+    </li>
+    <li><span>setTopNote(midiPitch)</span>
+      <div>parameter midiPitch - the MIDI pitch number for the desired top note</div>
+    </li>
+    <li><span>setActiveChord(activeChord)</span>
+      <div>parameter activeChord - an array of MIDI pitches to set the active chord</div>
+    </li>
+  </ul>
+
+  </div> <!-- close methods -->
+</article>
+<script src="./script.js" type="module"></script>
+</body>
+</html>
